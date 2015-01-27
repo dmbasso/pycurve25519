@@ -1,7 +1,10 @@
 pycurve25519
 ============
 
-Python 2.7 wrapper for curve25519 (based on [curve25519-donna](https://code.google.com/p/curve25519-donna/)).
+Python wrapper for curve25519 (based on [curve25519-donna](https://code.google.com/p/curve25519-donna/)).
+
+Tested on Python 2.7, Python 3.3, and PyPy 2.4. Note: it is around 3 orders of
+magnitude *slower* than the equivalent functions in PyNaCl.
 
 Usage
 -----
@@ -25,6 +28,10 @@ Usage
 Installation
 ------------
 
-    python setup.py build
+You need `pip` and the development headers of Python and the Foreign Function
+Interface library. On a Debian-derived OS you can `apt-get install python-pip
+python-dev libffi-dev`.
+
+    pip install -r requirements.txt
     python setup.py install
     python test_curve25519.py
